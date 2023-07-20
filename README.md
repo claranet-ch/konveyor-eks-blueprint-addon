@@ -82,7 +82,7 @@ make pattern konveyor deploy
 
 When deployment completes, the output will be similar to the following:
 
-<img src="./src/assets/img.png"/>
+<img src="./addon/src/assets/img.png"/>
 
 ## Example configuration
 
