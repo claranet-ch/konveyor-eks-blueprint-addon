@@ -1,0 +1,8 @@
+/addon/node_modules/
+/addon/dist/
+
+.DS_Store
+
+*.js
+!_*.js
+*.d.ts
