@@ -5,27 +5,30 @@ on:
     branches: main
 
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
     steps:
+      # checkout and install depencecies
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
       - run: npm ci
         working-directory: ./addon
+      
       # - run: npm test
+      
+      # build
       - run: npm run build --if-present
         working-directory: ./addon
-  
-  publish:
-    runs-on: ubuntu-latest
-    steps:
+
+      # publish
       - uses: JS-DevTools/npm-publish@v2
         with:
+          access: public
           dry-run: true
+          package: ./addon/package.json
           token: ${{ secrets.NPM_TOKEN }}
-
 
 # # source: https://github.com/dynatrace-oss/dynatrace-eks-blueprints-addon/blob/main/.github/workflows/release.yml
 # name: Release
