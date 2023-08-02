@@ -33,7 +33,7 @@ jobs:
           access: public
           # dry-run: true
           package: ./addon/package.json
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.NPM_TOKEN }}
 
 # # source: https://github.com/dynatrace-oss/dynatrace-eks-blueprints-addon/blob/main/.github/workflows/release.yml
 # name: Release
