@@ -18,7 +18,7 @@ jobs:
         run: npm ci
         working-directory: ./addon
       
-      # - name: Running tests ...
+      # - name: Run tests
       #   run: npm test
       
       - name: Build
