@@ -1,8 +1,9 @@
 name: Build and release on NPM
 
 on:
-  push:
-    branches: main
+  release:
+    types:
+      - created
 
 jobs:
   build-and-publish:
@@ -22,13 +23,17 @@ jobs:
       - run: npm run build --if-present
         working-directory: ./addon
 
+      - run: npm version ${{ github.event.release.tag_name }}
+        working-directory: ./addon
+        name: Update Version Number
+
       # publish
       - uses: JS-DevTools/npm-publish@v2
         with:
           access: public
-          dry-run: true
+          # dry-run: true
           package: ./addon/package.json
-          token: ${{ secrets.NPM_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
 # # source: https://github.com/dynatrace-oss/dynatrace-eks-blueprints-addon/blob/main/.github/workflows/release.yml
 # name: Release
