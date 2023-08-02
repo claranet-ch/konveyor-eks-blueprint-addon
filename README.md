@@ -31,7 +31,7 @@ cd cdk-eks-blueprints-patterns
 Install the addon
 
 ```sh
-npm install @claranet/claranet-eks-blueprints-addon
+npm install @claranet-ch/konveyor-eks-blueprints-addon
 ```
 
 Set the pattern's parameters in the CDK context by overriding the _cdk.json_ file (edit _PARENT_DOMAIN_NAME_ as it fits):
@@ -86,14 +86,14 @@ When deployment completes, the output will be similar to the following:
 
 ## Example configuration
 
-```js
+```typescript
 import { StackProps } from "aws-cdk-lib";
 import { Construct } from "constructs";
 import * as blueprints from "@aws-quickstart/eks-blueprints";
 import {
   KonveyorAddOn,
   OlmAddOn,
-} from "@claranet/claranet-eks-blueprints-addon";
+} from "@claranet-ch/konveyor-eks-blueprints-addon";
 
 export interface KonveyorConstructProps extends StackProps {
   account: string;
@@ -181,7 +181,7 @@ export class KonveyorConstruct extends Construct {
 }
 ```
 
-## Loggin
+## Log in
 
 Once the deployment ends navigate to
 
@@ -189,9 +189,9 @@ Once the deployment ends navigate to
 
 And enter the default admin credentials:
 
-- Username: admin
-- Password: Passw0rd!
+- Username: `admin`
+- Password: `Passw0rd!`
 
-## Enhacements/Bugs
+## Enhancements/Bugs
 
 Feel free to use issues to report bugs or request enhacements.
