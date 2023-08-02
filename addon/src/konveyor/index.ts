@@ -102,7 +102,7 @@ const defaultProps = {
     ingressName: "http-ingress",
     serviceName: "tackle-ui",
     servicePort: 8080,
-    konveyorOperatorManifestUrl: "https://operatorhub.io/install/konveyor-0.1/konveyor-operator.yaml"
+    konveyorOperatorManifestUrl: "https://operatorhub.io/install/konveyor-operator.yaml"
 };
 
 export class KonveyorAddOn implements ClusterAddOn {
