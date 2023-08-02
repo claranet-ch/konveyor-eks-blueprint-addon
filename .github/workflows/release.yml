@@ -25,6 +25,9 @@ jobs:
         run: npm run build --if-present
         working-directory: ./addon
 
+      - name: Copy README.md
+        run: cp README.md ./addon/
+
       - name: Update Version Number ...
         run: npm version ${{ github.event.release.tag_name }}
         working-directory: ./addon
