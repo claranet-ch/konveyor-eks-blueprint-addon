@@ -4,6 +4,5 @@
 .idea
 .DS_Store
 
-*.js
 !_*.js
 *.d.ts
