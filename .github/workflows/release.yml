@@ -1,4 +1,4 @@
-name: Build and release on NPM JS
+name: Release on NPM JS
 
 on:
   release:
@@ -6,7 +6,7 @@ on:
       - created
 
 jobs:
-  build-and-publish:
+  release-on-npm-js:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,13 +18,12 @@ jobs:
         run: npm ci
         working-directory: ./addon
       
-      # - name: Run tests
-      #   run: npm test
-      
       - name: Build
         run: npm run build --if-present
         working-directory: ./addon
 
+      - name: Copy LICENSE
+        run: cp ./LICENSE ./addon/
       - name: Copy README.md
         run: cp ./README.md ./addon/
 
@@ -32,8 +31,8 @@ jobs:
         run: npm version ${{ github.event.release.tag_name }}
         working-directory: ./addon
 
-      # publish
-      - uses: JS-DevTools/npm-publish@v2
+      - name: Publish on NPM JS
+        uses: JS-DevTools/npm-publish@v2
         with:
           access: public
           package: ./addon/package.json

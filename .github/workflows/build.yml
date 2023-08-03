@@ -1,0 +1,43 @@
+name: Lint, Build and scan for vulnerabilities
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./addon
+
+      - name: Lint
+        run: npm run lint
+        working-directory: ./addon
+        
+      - name: Build
+        run: npm run build --if-present
+        working-directory: ./addon
+
+  trivy:
+    needs: [build]
+    name: Trivy Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run Trivy vulnerability scanner in repo mode
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          ignore-unfixed: true
+          format: 'table'
+          severity: 'HIGH,CRITICAL'
+          scan-ref: ./addon
