@@ -12,7 +12,7 @@
   },
   "author": "Claranet Switzerland GmbH",
   "repository":"https://github.com/claranet-ch/konveyor-eks-blueprint-addon",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@types/dot-object": "^2.1.2",
     "@types/jest": "^29.5.1",

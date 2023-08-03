@@ -1,6 +1,24 @@
 # Konveyor Add-On for Amazon EKS Blueprints
 
-The Konveyor Add-on for Amazon EKS Blueprints enables organizations embarking on their modernization journey. It follows a simple yet effective approach of surfacing the information about the application to aid a **Decision Maker** to make decisions about their modernization and migration needs, plan the work in the form of **Migration waves** and provide guidance to the developers to complete the needed migration/modernization by providing assets as well as a catalog of integrated tools to aid specific workflows.
+Streamline the modernization of your application portfolio to Kubernetes. The Konveyor tool gives you insight throughout the migration process - whether you're making decisions at the portfolio or application level.
+
+Feature set
+
+- Konveyor Hub: Central interface from where you manage your application portfolio and integrate with other Konveyor tools.
+
+- Categorize and group applications by different dimensions (pre-packaged or custom) aligned with technical criteria or your organization structure.
+
+- Assess applications containerization suitablity and risks assessment.
+
+- Assign priority, assess estimated migration effort, and define optimal migration strategy for individual applications.
+
+- Evaluate required changes for Java applications containerization through automated analysis (pre-packaged or custom rules).
+
+- Fully integrated Konveyor Data Intensive Validity Advisor (DiVA): Analyzes the data layer of applications and detect dependencies to different data stores and distributed transactions. Import target Java application source files to generate analysis results.
+
+[Konveyor](https://www.konveyor.io/) is an Open Source software developed by the Konveyor Community, and is a <abbr title="Cloud Native Computing Foundation">CNCF</abbr> Sandbox project.
+
+This Open Source solution is packaged by [Claranet Switzerland](https://www.claranet.ch/) GmbH.
 
 ## Prerequisites
 
