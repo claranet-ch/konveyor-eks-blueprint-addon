@@ -16,7 +16,7 @@ Feature set
 
 - Fully integrated Konveyor Data Intensive Validity Advisor (DiVA): Analyzes the data layer of applications and detect dependencies to different data stores and distributed transactions. Import target Java application source files to generate analysis results.
 
-[Konveyor](https://www.konveyor.io/) is an Open Source software developed by the Konveyor Community, and is a <abbr title="Cloud Native Computing Foundation">CNCF</abbr> Sandbox project.
+[Konveyor](https://www.konveyor.io/) is an Open Source software developed by the Konveyor Community, and is a [CNCF](https://www.cncf.io/) Sandbox project.
 
 This Open Source solution is packaged by [Claranet Switzerland](https://www.claranet.ch/) GmbH.
 
