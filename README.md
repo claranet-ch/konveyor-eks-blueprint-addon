@@ -49,7 +49,7 @@ cd cdk-eks-blueprints-patterns
 Install the addon
 
 ```sh
-npm install @claranet-ch/konveyor-eks-blueprints-addon
+npm install @claranet-ch/konveyor-eks-blueprint-addon
 ```
 
 Set the pattern's parameters in the CDK context by overriding the _cdk.json_ file (edit _PARENT_DOMAIN_NAME_ as it fits):
@@ -111,7 +111,7 @@ import * as blueprints from "@aws-quickstart/eks-blueprints";
 import {
   KonveyorAddOn,
   OlmAddOn,
-} from "@claranet-ch/konveyor-eks-blueprints-addon";
+} from "@claranet-ch/konveyor-eks-blueprint-addon";
 
 export interface KonveyorConstructProps extends StackProps {
   account: string;

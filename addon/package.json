@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "build": "rm -rf dist && tsc",
+    "postbuild": "cpy 'src/**/*.ytpl' dist --no-overwrite --parents",
     "lint": "eslint src --ext .ts"
   },
   "author": "Claranet Switzerland GmbH",
@@ -32,7 +33,8 @@
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
     "typedoc": "^0.24.4",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "cpy-cli": "^5.0.0"
   },
   "dependencies": {
     "@aws-quickstart/eks-blueprints": "^1.10.0"
